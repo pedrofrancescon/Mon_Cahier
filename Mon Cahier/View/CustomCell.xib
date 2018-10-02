@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="66" id="HSJ-B1-XhO" customClass="CustomCell" customModule="Mon_Cahier" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HSJ-B1-XhO" id="l51-fd-nWe">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRY-3C-OIS">
+                        <rect key="frame" x="20" y="22.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GrC-pL-ybR">
+                        <rect key="frame" x="72" y="22.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lRY-3C-OIS" firstAttribute="centerY" secondItem="l51-fd-nWe" secondAttribute="centerY" id="OLM-RN-UYn"/>
+                    <constraint firstItem="lRY-3C-OIS" firstAttribute="leading" secondItem="l51-fd-nWe" secondAttribute="leading" constant="20" id="bs3-Ir-AGK"/>
+                    <constraint firstItem="GrC-pL-ybR" firstAttribute="leading" secondItem="lRY-3C-OIS" secondAttribute="trailing" constant="10" id="lB0-Tr-vIB"/>
+                    <constraint firstItem="GrC-pL-ybR" firstAttribute="centerY" secondItem="l51-fd-nWe" secondAttribute="centerY" id="zhM-zM-010"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="iconLabel" destination="lRY-3C-OIS" id="ViD-bx-hay"/>
+                <outlet property="nameLabel" destination="GrC-pL-ybR" id="I0a-VH-n0u"/>
+            </connections>
+            <point key="canvasLocation" x="-135.19999999999999" y="-176.31184407796104"/>
+        </tableViewCell>
+    </objects>
+</document>
