@@ -8,17 +8,12 @@
 
 import UIKit
 
-enum CellType {
-    case document
-    case folder
-}
-
 class CustomCell: UITableViewCell {
     
     @IBOutlet var iconLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     
-    var cellType: CellType = .folder
+    var cellType: ItemType = .folder
     
     override func awakeFromNib() {
         super.awakeFromNib()

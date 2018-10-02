@@ -12,7 +12,7 @@ class FolderVC: ItemVC {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var subFolders: [ItemVC]
+    var items: [ItemVC]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +23,14 @@ class FolderVC: ItemVC {
         tableView.tableFooterView = UIView()
         
         let rightBarBtn = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(clicked))
-        rightBarBtn.tintColor = UIColor(color: .mainBlue)
         
         navigationItem.setRightBarButton(rightBarBtn, animated: false)
     }
 
 
-    override init(named name: String) {
-        self.subFolders = []
-        super.init(named: name)
+    init(named name: String) {
+        self.items = []
+        super.init(ofType: .folder, named: name)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,7 +64,7 @@ class FolderVC: ItemVC {
             
             let newFolder = FolderVC(named: name)
             
-            self.subFolders.append(newFolder)
+            self.items.append(newFolder)
             
             self.updateTableView()
             
@@ -79,6 +78,9 @@ class FolderVC: ItemVC {
         
         alert.addAction(textFieldAction)
         alert.addAction(cancelAction)
+        
+        alert.view.tintColor = UIColor(color: .mainBlue)
+        
         present(alert, animated: true, completion: nil)
         
     }
@@ -96,14 +98,8 @@ extension FolderVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if subFolders.count == 0 {
-            tableView.separatorStyle = .none
-            return subFolders.count
-        }
-        
-        tableView.separatorStyle = .singleLine
-        
-        return subFolders.count
+
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,9 +110,20 @@ extension FolderVC: UITableViewDelegate, UITableViewDataSource {
             cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as? CustomCell
         }
         
-        cell?.nameLabel.text = subFolders[indexPath.row].name
+        cell?.nameLabel.text = items[indexPath.row].name
+        cell?.cellType = items[indexPath.row].type
         
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if items[indexPath.row].type == .folder {
+            guard let parent = parent as? MainNavigationController else { return }
+            
+            parent.pushViewController(items[indexPath.row], animated: true)
+        }
+        
     }
     
 }

@@ -8,20 +8,25 @@
 
 import UIKit
 
+enum ItemType {
+    case document
+    case folder
+}
+
 class ItemVC: UIViewController {
     
     var name: String
+    var type: ItemType
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = name
     }
-
-
-    init(named name: String) {
+    
+    init(ofType type: ItemType, named name: String) {
         self.name = name
-        
+        self.type = type
         super.init(nibName: nil, bundle: nil)
         //super.init(nibName: "ItemVC", bundle: nil)
     }

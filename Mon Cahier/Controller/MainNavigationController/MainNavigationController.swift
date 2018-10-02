@@ -20,6 +20,7 @@ class MainNavigationController: UINavigationController {
         ]
         
         navigationBar.titleTextAttributes = navigationTitleAttributes
+        navigationBar.tintColor = UIColor(color: .mainBlue)
         
         let mainVC = FolderVC(named: "Mon Cahier")
         setViewControllers([mainVC], animated: false)
