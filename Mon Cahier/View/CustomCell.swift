@@ -23,7 +23,8 @@ class CustomCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        iconLabel.font = UIFont(name: "FontAwesome5FreeSolid", size: 20)
+        iconLabel.font = UIFont(name: "FontAwesome5FreeRegular", size: 25)
+        iconLabel.textColor = UIColor(color: .mainBlue)
         
     }
     
@@ -36,6 +37,8 @@ class CustomCell: UITableViewCell {
             iconLabel.text = "\u{f07b}"
             break
         }
+        
+        super.layoutSubviews()
     }
     
 }

@@ -21,7 +21,7 @@ class MainNavigationController: UINavigationController {
         
         navigationBar.titleTextAttributes = navigationTitleAttributes
         
-        let mainVC = FolderVC()
+        let mainVC = FolderVC(named: "Mon Cahier")
         setViewControllers([mainVC], animated: false)
         
         // Dismiss keyboard
