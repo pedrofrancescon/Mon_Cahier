@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomCell: UITableViewCell {
+class ItemCell: UITableViewCell {
     
     @IBOutlet var iconLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
@@ -26,6 +26,7 @@ class CustomCell: UITableViewCell {
     override func layoutSubviews() {
         switch cellType {
         case .document:
+            iconLabel.font = UIFont(name: "FontAwesome5FreeSolid", size: 25)
             iconLabel.text = "\u{f15b}"
             break
         case .folder:

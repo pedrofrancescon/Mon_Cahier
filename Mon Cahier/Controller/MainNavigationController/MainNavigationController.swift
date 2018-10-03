@@ -26,7 +26,7 @@ class MainNavigationController: UINavigationController {
         setViewControllers([mainVC], animated: false)
         
         // Dismiss keyboard
-        /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+        /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -35,7 +35,6 @@ class MainNavigationController: UINavigationController {
     }
     
     init() {
-        
         super.init(nibName: "MainNavigationController", bundle: nil)
     }
     

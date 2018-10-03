@@ -28,7 +28,6 @@ class ItemVC: UIViewController {
         self.name = name
         self.type = type
         super.init(nibName: nil, bundle: nil)
-        //super.init(nibName: "ItemVC", bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
